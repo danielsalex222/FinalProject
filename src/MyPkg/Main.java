@@ -5,7 +5,7 @@ public class Main {
 
         System.out.println("Please let this work");
         System.out.println("Let's go!!!");
-        System.out.println("This is David");
+        System.out.println("I hate GitHub");
 
     }
 }
