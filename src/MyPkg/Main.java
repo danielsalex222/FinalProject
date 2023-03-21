@@ -7,5 +7,7 @@ public class Main {
         System.out.println("Let's go!!!");
         System.out.println("I hate GitHub");
 
+        Speed s = new Speed(60, 100);
+
     }
 }
