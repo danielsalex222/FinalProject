@@ -1,16 +1,16 @@
 package MyPkg;
 
-public class Speed {
+public class SpeedConverter {
 
     double mph;
     double kph;
 
-    Speed(){
+    SpeedConverter(){
         kph = 0;
         mph = 0;
     }
 
-    Speed(double mph, double kph){
+    SpeedConverter(double mph, double kph){
         this.mph = mph;
         this.kph = kph;
     }
