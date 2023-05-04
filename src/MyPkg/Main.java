@@ -16,7 +16,7 @@ public class Main {
             int userFunction = input.nextInt();
 
             switch (userFunction) {
-                case 1 -> System.out.println(new RacePredictor(1, 4, 41));
+                case 1 -> System.out.println(textInput(input));
                 case 2 -> System.out.println(new SplitFinder(1, 1, 1));
                 case 3 -> System.out.println(new RacingPaceCalculator(1, 1, 1));
                 case 4 -> System.out.println(new ElevationGuru());
@@ -27,6 +27,19 @@ public class Main {
 
         }
 
+
+    }
+
+    private static RacePredictor textInput(Scanner input) {
+
+        System.out.print("Please enter a distance: ");
+        int x = input.nextInt();
+        System.out.print("Enter minutes:");
+        int y = input.nextInt();
+        System.out.print("Enter seconds: ");
+        int z = input.nextInt();
+
+        return new RacePredictor(x, y, z);
 
     }
 
@@ -44,4 +57,6 @@ public class Main {
         x.append("SPEED CONVERTER - This will switch miles per hour\ninto kilometers per hour and vice versa\n\n");
         return (x.toString());
     }
+
+
 }
