@@ -1,4 +1,6 @@
 package MyPkg;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 public class Main {
@@ -6,6 +8,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome to the Run-O-Matic 5000");
+
         while(true) {
             System.out.println("Please Enter the function you would like to use");
             System.out.print("1- Race Time Predictor\t\t2- Split Finder\n3- Pace Calculator\t\t\t4- Elevation Guru\n5- Speed Converter\t\t\t6- Function Info\n7- Exit\n");
@@ -13,14 +16,15 @@ public class Main {
             int userFunction = input.nextInt();
 
             switch (userFunction) {
-                case 1 -> new RacePredictor();
-                case 2 -> new SplitFinder();
-                case 3 -> new RacingPaceCalculator();
-                case 4 -> new ElevationGuru();
+                case 1 -> System.out.println(new RacePredictor(1, 4, 41));
+                case 2 -> System.out.println(new SplitFinder(1, 1, 1));
+                case 3 -> System.out.println(new RacingPaceCalculator(1, 1, 1));
+                case 4 -> System.out.println(new ElevationGuru());
                 case 5 -> new SpeedConverter();
                 case 6 -> System.out.print(FunctionInfo());
                 case 7 -> System.exit(69);
             }
+
         }
 
 
