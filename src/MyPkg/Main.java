@@ -1,7 +1,5 @@
 package MyPkg;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     public static void main (String[] args){
@@ -16,7 +14,7 @@ public class Main {
             int userFunction = input.nextInt();
 
             switch (userFunction) {
-                case 1 -> System.out.println(textInput(input));
+                case 1 -> System.out.println(new RacePredictor(1, 1, 1);
                 case 2 -> System.out.println(new SplitFinder(1, 1, 1));
                 case 3 -> System.out.println(new RacingPaceCalculator(1, 1, 1));
                 case 4 -> System.out.println(new ElevationGuru());
@@ -30,7 +28,10 @@ public class Main {
 
     }
 
-    private static RacePredictor textInput(Scanner input) {
+    // FIX THIS!!!
+    private static int[] textInput(Scanner input) {
+
+
 
         System.out.print("Please enter a distance: ");
         int x = input.nextInt();
@@ -39,7 +40,9 @@ public class Main {
         System.out.print("Enter seconds: ");
         int z = input.nextInt();
 
-        return new RacePredictor(x, y, z);
+        int[] InputStuff = {x, y, z};
+
+        return InputStuff;
 
     }
 

@@ -7,7 +7,7 @@ public class RacePredictor extends TimeDistanceCalculator{
     }
 
     public String calculate() {
-        return "I'm an elevation guru";
+        return "I'm a race predictor";
     }
 
 }
