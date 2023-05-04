@@ -27,6 +27,17 @@ public class Main {
     }
 
     private static String FunctionInfo() {
-        return "shorts\nEnter to continue";
+        StringBuilder x = new StringBuilder();
+        //Race Predictor info
+        x.append("RACE PREDICTOR - The user will input a time for a certain distance\nand the program will predict their race times at other\ndistances for that level of fitness.\n\n");
+        //Split Finder Info
+        x.append("SPLIT FINDER - The user will input a distance and time\nand will show the user the splits per mile\nthat they will need to achieve the desired time.\n\n");
+        //Racing Pace Calculator Info
+        x.append("PACE CALCULATOR - This simply takes an inputted time and distance\nthen calculates the pace it would take to run that\n\n");
+        //Elevation Guru Info
+        x.append("ELEVATION GURU - This takes an inputted vertical and \nhorizontal distance and will calculate the hill's grade\n\n");
+        //Speed converter info
+        x.append("SPEED CONVERTER - This will switch miles per hour\ninto kilometers per hour and vice versa\n\n");
+        return (x.toString());
     }
 }
