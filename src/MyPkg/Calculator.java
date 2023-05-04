@@ -1,4 +1,5 @@
 package MyPkg;
 
-public class Calculator {
+public abstract class Calculator {
+    public abstract String calculate();
 }
