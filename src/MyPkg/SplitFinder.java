@@ -1,4 +1,4 @@
 package MyPkg;
 
-public class SplitFinder {
+public class SplitFinder extends TimeDistanceCalculator{
 }

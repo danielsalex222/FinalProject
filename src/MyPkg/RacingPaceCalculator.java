@@ -1,4 +1,4 @@
 package MyPkg;
 
-public class RacingPaceCalculator {
+public class RacingPaceCalculator extends TimeDistanceCalculator{
 }

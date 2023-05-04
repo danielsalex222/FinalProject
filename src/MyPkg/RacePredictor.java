@@ -1,6 +1,6 @@
 package MyPkg;
 
-public class RacePredictor {
+public class RacePredictor extends TimeDistanceCalculator{
 
 
 }

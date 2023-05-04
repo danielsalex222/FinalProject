@@ -1,4 +1,4 @@
 package MyPkg;
 
-public class ElevationGuru {
+public class ElevationGuru extends Calculator {
 }

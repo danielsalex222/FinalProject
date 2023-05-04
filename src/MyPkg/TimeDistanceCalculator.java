@@ -1,4 +1,4 @@
 package MyPkg;
 
-public class TimeDistanceCalculator {
+public abstract class TimeDistanceCalculator extends Calculator {
 }
