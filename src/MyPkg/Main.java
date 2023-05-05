@@ -14,7 +14,8 @@ public class Main {
             int userFunction = input.nextInt();
 
             switch (userFunction) {
-                case 1 -> System.out.println(new RacePredictor(1, 1, 1);
+                case 1 -> {int[] stuff = textInput(input)
+                    System.out.println(new RacePredictor(stuff[1], stuff[2], stuff[3]);}
                 case 2 -> System.out.println(new SplitFinder(1, 1, 1));
                 case 3 -> System.out.println(new RacingPaceCalculator(1, 1, 1));
                 case 4 -> System.out.println(new ElevationGuru());
