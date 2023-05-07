@@ -2,8 +2,8 @@ package MyPkg;
 
 public class RacingPaceCalculator extends TimeDistanceCalculator{
 
-    RacingPaceCalculator(int distance, int minutes, int seconds) {
-        super(distance, minutes, seconds);
+    RacingPaceCalculator(TimeAndDistance timeAndDistance) {
+        super(timeAndDistance);
     }
 
     public String calculate() {

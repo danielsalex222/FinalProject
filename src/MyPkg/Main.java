@@ -4,48 +4,43 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args){
         Scanner input = new Scanner(System.in);
-
+        boolean running = true;
         System.out.println("Welcome to the Run-O-Matic 5000");
+        InputRequester inputRequester = new InputRequester();
 
-        while(true) {
+        do {
             System.out.println("Please Enter the function you would like to use");
             System.out.print("1- Race Time Predictor\t\t2- Split Finder\n3- Pace Calculator\t\t\t4- Elevation Guru\n5- Speed Converter\t\t\t6- Function Info\n7- Exit\n");
             System.out.print("||~ ");
             int userFunction = input.nextInt();
 
             switch (userFunction) {
-                case 1 -> {int[] stuff = textInput(input)
-                    System.out.println(new RacePredictor(stuff[1], stuff[2], stuff[3]);}
-                case 2 -> System.out.println(new SplitFinder(1, 1, 1));
-                case 3 -> System.out.println(new RacingPaceCalculator(1, 1, 1));
+                case 1 -> {
+                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput(input);
+                    RacePredictor rp = new RacePredictor(timeAndDistance);
+                    System.out.println(rp.calculate());
+                }
+                case 2 -> {
+                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput(input);
+                    System.out.println(new SplitFinder(timeAndDistance));
+                }
+                case 3 -> {
+                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput(input);
+                    System.out.println(new RacingPaceCalculator(timeAndDistance));
+                }
                 case 4 -> System.out.println(new ElevationGuru());
                 case 5 -> new SpeedConverter();
                 case 6 -> System.out.print(FunctionInfo());
-                case 7 -> System.exit(69);
+                case 7 -> running = false;
+                default -> System.out.print("Unknown Input");
             }
 
-        }
+        } while (running);
 
 
     }
 
     // FIX THIS!!!
-    private static int[] textInput(Scanner input) {
-
-
-
-        System.out.print("Please enter a distance: ");
-        int x = input.nextInt();
-        System.out.print("Enter minutes:");
-        int y = input.nextInt();
-        System.out.print("Enter seconds: ");
-        int z = input.nextInt();
-
-        int[] InputStuff = {x, y, z};
-
-        return InputStuff;
-
-    }
 
     private static String FunctionInfo() {
         StringBuilder x = new StringBuilder();
