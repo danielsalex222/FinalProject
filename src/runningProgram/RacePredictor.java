@@ -1,3 +1,7 @@
+/*
+    Child class of TimeDistanceCalculator
+    Uses time and distance to calculate predicted speeds of other races
+ */
 package runningProgram;
 
 public class RacePredictor extends TimeDistanceCalculator{
@@ -31,6 +35,7 @@ public class RacePredictor extends TimeDistanceCalculator{
         MinutesAndSeconds twoMileDetails = convertToMinutesAndSeconds(predictedSecondsPerTwoMile);
         MinutesAndSeconds fiveKDetails = convertToMinutesAndSeconds(predictedSecondsPerFiveK);
         MinutesAndSeconds tenKDetails = convertToMinutesAndSeconds(predictedSecondsPerTenK);
+
 
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(String.format("\nThe converted mile time is: %d:%02d\n", mileDetails.getMinutes(), mileDetails.getSeconds()));
