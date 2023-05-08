@@ -82,6 +82,11 @@ public class InputRequester {
             }
         }
     }
+
+    /**
+     * Gets the elevation for ElevationGuru
+     * @return elevation
+     */
     public ElevationGuru getElevation(){
         System.out.print("Please Enter the Vertical Distance: ");
         double vertDistance = input.nextDouble();
@@ -90,6 +95,10 @@ public class InputRequester {
         return new ElevationGuru(vertDistance, horizDistance);
     }
 
+    /**
+     * The SpeedConverter will get the input specifically for SpeedConverter
+     * @return speed values
+     */
     public SpeedConverter getSpeedConversion(){
 
         int integerInput = getIntegerInput(2, "Would you like to enter MPH or Km/H?(1 = MPH, 2 = Km/H): ");

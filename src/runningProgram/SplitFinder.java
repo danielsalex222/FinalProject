@@ -5,11 +5,18 @@
 package runningProgram;
 
 public class SplitFinder extends TimeDistanceCalculator{
-
+    /**
+     * No-Args constructor
+     * @param timeAndDistance
+     */
     SplitFinder(TimeAndDistance timeAndDistance) {
         super(timeAndDistance);
     }
 
+    /**
+     * Calculates the Splits
+     * @return
+     */
     public String calculate() {
 
         double seconds = timeAndDistance.getTotalSeconds();
