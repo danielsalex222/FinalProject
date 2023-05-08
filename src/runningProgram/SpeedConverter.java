@@ -1,5 +1,6 @@
 /*
-
+    Child class of the Calculator Class
+    Converts Miles per hour into Kilometers per hour and vice versa
  */
 package runningProgram;
 

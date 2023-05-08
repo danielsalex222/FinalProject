@@ -1,5 +1,5 @@
 /*
-
+This is an abstract class that is a parent class to TimeDistance Calculator, Elevation Guru, and Speed Converter
  */
 package runningProgram;
 

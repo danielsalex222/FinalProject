@@ -27,5 +27,4 @@ public class RacingPaceCalculator extends TimeDistanceCalculator{
 
         return stringBuilder.toString();
     }
-
 }

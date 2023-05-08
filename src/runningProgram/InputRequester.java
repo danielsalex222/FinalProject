@@ -1,5 +1,5 @@
 /*
-
+    Handles all the input
  */
 package runningProgram;
 

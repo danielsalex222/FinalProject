@@ -1,5 +1,5 @@
 /*
-
+    Converts minutes into total seconds
  */
 package runningProgram;
 

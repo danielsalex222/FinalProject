@@ -1,5 +1,6 @@
 /*
-
+    Child Class of the Calculator Class
+    Calculates the grade of a hill based off horizontal and vertical distance
  */
 package runningProgram;
 

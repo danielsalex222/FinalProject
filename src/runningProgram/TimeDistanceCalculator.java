@@ -1,5 +1,6 @@
 /*
-
+    The child class of Calculator
+    The parent class of, Race Predictor, Split Finder, and Racing Pace Calculator
  */
 package runningProgram;
 
