@@ -2,17 +2,29 @@ package runningProgram;
 import java.io.*;
 
 public class FileIO {
-     public String verify() {
+     public String verify() throws IOException {
 
-         try (InputStreamReader cin = new InputStreamReader(System.in)) {
-             System.out.println("Enter anything, and a text file will appear.");
-             char c;
-             c = (char) cin.read();
-             System.out.print(c);
+         FileReader in = null;
+         FileWriter out = null;
 
+         try {
+             in = new FileReader("input.txt");
+             out = new FileWriter("output.txt");
+
+             int c;
+             while ((c = in.read()) != -1) {
+                 out.write(c);
+             }
          } catch (IOException e) {
-             System.out.println("That didn't work...\n");
+             throw new RuntimeException(e);
+         } finally {
+             if (in != null) {
+                 in.close();
+             }
+             if (out != null) {
+                 out.close();
+             }
          }
-         return "Check your Files\n";
+         return "Check your files";
      }
     }
