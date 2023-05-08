@@ -7,6 +7,21 @@ public class RacingPaceCalculator extends TimeDistanceCalculator{
     }
 
     public String calculate() {
-        return "I'm a racing pace calculator";
+
+        double seconds = timeAndDistance.getTotalSeconds();
+        double distance = timeAndDistance.getDistance();
+
+        double secondsPerMeter = (seconds / distance);
+
+        double secondsPerMile = secondsPerMeter * 1609;
+
+        MinutesAndSeconds details = convertToMinutesAndSeconds(secondsPerMile);
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append(String.format("\nYour pace per mile for your selected distance is %d:%02d\n", details.getMinutes(), details.getSeconds()));
+
+        return stringBuilder.toString();
     }
+
 }

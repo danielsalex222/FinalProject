@@ -35,6 +35,7 @@ public class Main {
                 }
                 case 4 -> {
                     ElevationGuru eg = new ElevationGuru();
+                    eg = inputRequester.getElevation();
                     System.out.println(eg.calculate());
                 }
                 case 5 -> new SpeedConverter();

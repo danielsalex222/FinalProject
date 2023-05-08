@@ -7,6 +7,11 @@ public class SplitFinder extends TimeDistanceCalculator{
     }
 
     public String calculate() {
+
+
+
+
+
         return "I'm a splitFinder";
     }
 }
