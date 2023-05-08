@@ -1,3 +1,6 @@
+/*
+    Converts minutes into total seconds
+ */
 package runningProgram;
 
 public class TimeAndDistance {

@@ -1,3 +1,7 @@
+/*
+    Child clas of TimeDistanceCalculator
+    Calculates the mile pace of a race based on a time and distance
+ */
 package runningProgram;
 
 public class RacingPaceCalculator extends TimeDistanceCalculator{
@@ -23,5 +27,4 @@ public class RacingPaceCalculator extends TimeDistanceCalculator{
 
         return stringBuilder.toString();
     }
-
 }
