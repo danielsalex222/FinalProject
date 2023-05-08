@@ -38,10 +38,10 @@ public class RacePredictor extends TimeDistanceCalculator{
 
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("\nThe converted mile time is: %d:%02d\n", mileDetails.getMinutes(), mileDetails.getSeconds()));
-        stringBuilder.append(String.format("The converted 2 mile time is: %d:%02d\n", twoMileDetails.getMinutes(), twoMileDetails.getSeconds()));
-        stringBuilder.append(String.format("The converted 5K time is: %d:%02d\n", fiveKDetails.getMinutes(), fiveKDetails.getSeconds()));
-        stringBuilder.append(String.format("The converted 10K time is: %d:%02d\n", tenKDetails.getMinutes(), tenKDetails.getSeconds()));
+        stringBuilder.append(String.format("\nThe predicted mile time is: %d:%02d\n", mileDetails.getMinutes(), mileDetails.getSeconds()));
+        stringBuilder.append(String.format("The predicted 2 mile time is: %d:%02d\n", twoMileDetails.getMinutes(), twoMileDetails.getSeconds()));
+        stringBuilder.append(String.format("The predicted 5K time is: %d:%02d\n", fiveKDetails.getMinutes(), fiveKDetails.getSeconds()));
+        stringBuilder.append(String.format("The predicted 10K time is: %d:%02d\n", tenKDetails.getMinutes(), tenKDetails.getSeconds()));
         return stringBuilder.toString();
     }
 
