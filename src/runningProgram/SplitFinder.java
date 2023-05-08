@@ -32,7 +32,15 @@ public class SplitFinder extends TimeDistanceCalculator{
                 stringBuilder.append(String.format("%d meter split - %d:%02d\n", i*400, splits.getMinutes(), splits.getSeconds()));
             }
         } else if (distance > 3218) {
-            double secondsPerMile = (seconds / distance) * 1609;
+            double totalSeconds = (seconds / distance) * 1609;
+            for (int i = 1; i < distance / 1600; i++) {
+                MinutesAndSeconds splits = miles(totalSeconds, i);
+                stringBuilder.append(String.format("%d mile split - %d:%02d\n", i, splits.getMinutes(), splits.getSeconds()));
+                double extra = seconds - (splits.getMinutes() + splits.getSeconds());
+            }
+
+            stringBuilder.append(String.format("Extra - %d:%02d", 1, 1));
+
         }
 
 
@@ -40,16 +48,19 @@ public class SplitFinder extends TimeDistanceCalculator{
         return stringBuilder.toString();
     }
 
+    private MinutesAndSeconds miles(double totalSeconds, int i) {
+
+        return convertToMinutesAndSeconds(totalSeconds * i);
+    }
+
     /**
-     * Finds each individual split for each 400m
+     * Finds each individual split for each 400m (With minutes and seconds)
      *
      * @param fourHundredSplit
      * @return
      */
     private MinutesAndSeconds fourHundreds(double fourHundredSplit, int i) {
 
-        MinutesAndSeconds split1 = convertToMinutesAndSeconds(fourHundredSplit * i);
-
-        return split1;
+        return convertToMinutesAndSeconds(fourHundredSplit * i);
     }
 }
