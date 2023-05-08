@@ -1,3 +1,6 @@
+/*
+
+ */
 package runningProgram;
 
 public class SplitFinder extends TimeDistanceCalculator{
