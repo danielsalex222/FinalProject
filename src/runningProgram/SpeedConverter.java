@@ -15,8 +15,12 @@ public class SpeedConverter extends Calculator{
     }
 
 
-    SpeedConverter(double mph, double kph){
+    public void setMph(int mph) {
         this.mph = mph;
+        this.kph = milesToKilometers(mph);
+    }
+
+    public void setKph(int kph) {
         this.kph = kph;
         this.mph = kilometersToMiles(kph);
     }
@@ -33,8 +37,8 @@ public class SpeedConverter extends Calculator{
      * if they input miles per hour this will convert it to kilometers per hour
      * @return kilometers per hour
      */
-    public int milesToKilometers(){
-        return 2;
+    public int milesToKilometers(int mph){
+        return (int) (mph * 1.609);
     }
 
 }

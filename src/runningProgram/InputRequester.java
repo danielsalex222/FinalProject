@@ -79,7 +79,26 @@ public class InputRequester {
             }
         }
     }
+    public ElevationGuru getElevation(){
+        System.out.print("Please Enter the Vertical Distance: ");
+        double vertDistance = input.nextDouble();
+        System.out.print("Please Enter the Horizontal Distance: ");
+        double horizDistance = input.nextDouble();
+        return new ElevationGuru(vertDistance, horizDistance);
+    }
 
-    // TODO: Make elevation input
+    public SpeedConverter getSpeedConversion(){
+
+        int integerInput = getIntegerInput(2, "Would you like to enter MPH or Km/H?(1 = MPH, 2 = Km/H): ");
+
+        SpeedConverter speedConverter = new SpeedConverter();
+
+        switch (integerInput){
+            case 1 -> speedConverter.setMph(getIntegerInput(Integer.MAX_VALUE, "Enter in your speed in MPH: "));
+            case 2 -> speedConverter.setKph(getIntegerInput(Integer.MAX_VALUE, "Enter in your speed in Km/H: "));
+        }
+
+        return speedConverter;
+    }
 
 }

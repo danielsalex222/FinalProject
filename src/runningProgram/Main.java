@@ -18,28 +18,31 @@ public class Main {
             stringBuilder.append("||~ ");
 
             switch (inputRequester.getIntegerInput(7, stringBuilder.toString())) {
-                case 1 -> {
+                case 1 -> {//Race Predictor
                     TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput();
                     RacePredictor rp = new RacePredictor(timeAndDistance);
                     System.out.println(rp.calculate());
                 }
-                case 2 -> {
+                case 2 -> {//Split Finder
                     TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput();
                     SplitFinder sf = new SplitFinder(timeAndDistance);
                     System.out.println(sf.calculate());
                 }
-                case 3 -> {
+                case 3 -> {//Racing Pace Calculator
                     TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput();
                     RacingPaceCalculator rpc = new RacingPaceCalculator(timeAndDistance);
                     System.out.println(rpc.calculate());
                 }
-                case 4 -> {
+                case 4 -> {//Elevation
                     ElevationGuru eg = new ElevationGuru();
                     eg = inputRequester.getElevation();
                     System.out.println(eg.calculate());
                 }
-                case 5 -> new SpeedConverter();
-                case 6 -> System.out.print(FunctionInfo());
+                case 5 -> {//Speed Converter
+                    SpeedConverter sc = inputRequester.getSpeedConversion();
+                    System.out.println(sc.calculate());
+                }
+                case 6 -> System.out.print(FunctionInfo());//Function Info
                 case 7 -> running = false;
                 default -> System.out.println("INPUT MUST BE AN INTEGER VALUE 1-7\n");
             }
