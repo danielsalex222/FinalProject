@@ -20,10 +20,10 @@ public class Main {
             stringBuilder.append("1- Race Time Predictor\t\t2- Split Finder\n");
             stringBuilder.append("3- Pace Calculator\t\t\t4- Elevation Guru\n");
             stringBuilder.append("5- Speed Converter\t\t\t6- Function Info\n");
-            stringBuilder.append("7- Exit\n");
+            stringBuilder.append("7- Text File Maker\t\t\t8- Exit\n");
             stringBuilder.append("||~ ");
 
-            switch (inputRequester.getIntegerInput(7, stringBuilder.toString())) {
+            switch (inputRequester.getIntegerInput(8, stringBuilder.toString())) {
                 case 1 -> {//Race Predictor
                     TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput();
                     RacePredictor rp = new RacePredictor(timeAndDistance);
@@ -49,8 +49,12 @@ public class Main {
                     System.out.println(sc.calculate());
                 }
                 case 6 -> System.out.print(FunctionInfo());//Function Info
-                case 7 -> running = false;
-                default -> System.out.println("INPUT MUST BE AN INTEGER VALUE 1-7\n");
+                case 7 -> {
+                    FileIO textStuff = new FileIO();
+                    System.out.println(textStuff.verify());
+                }
+                case 8 -> running = false;
+                default -> System.out.println("INPUT MUST BE AN INTEGER VALUE 1-8\n");
             }
 
         } while (running);
