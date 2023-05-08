@@ -7,6 +7,7 @@ public class TimeAndDistance {
     private int minutes;
     private int seconds;
 
+
     public int getTotalSeconds() {
         return minutes * 60 + seconds;
     }
