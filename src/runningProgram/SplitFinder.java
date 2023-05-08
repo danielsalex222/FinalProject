@@ -8,7 +8,10 @@ public class SplitFinder extends TimeDistanceCalculator{
 
     public String calculate() {
 
+        double seconds = timeAndDistance.getTotalSeconds();
+        double distance = timeAndDistance.getDistance();
 
+        double secondsPerMile = (seconds / distance) * 1609;
 
 
 
