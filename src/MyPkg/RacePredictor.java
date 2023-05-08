@@ -16,16 +16,15 @@ public class RacePredictor extends TimeDistanceCalculator{
         double predictedSecondsPerTenK = seconds * (Math.pow((10000 / distance), 1.06));
 
         MinutesAndSeconds mileDetails = convertToMinutesAndSeconds(predictedSecondsPerMile);
-        MinutesAndSeconds TwoMileDetails = convertToMinutesAndSeconds(predictedSecondsPerTwoMile);
-        MinutesAndSeconds FiveKDetails = convertToMinutesAndSeconds(predictedSecondsPerFiveK);
-        MinutesAndSeconds TenKDetails = convertToMinutesAndSeconds(predictedSecondsPerTenK);
-
+        MinutesAndSeconds twoMileDetails = convertToMinutesAndSeconds(predictedSecondsPerTwoMile);
+        MinutesAndSeconds fiveKDetails = convertToMinutesAndSeconds(predictedSecondsPerFiveK);
+        MinutesAndSeconds tenKDetails = convertToMinutesAndSeconds(predictedSecondsPerTenK);
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("The converted mile time is: %d:%d", mileDetails.minutes, mileDetails.seconds));
-        stringBuilder.append(String.format("The converted 2 mile time is: %d:%d", TwoMileDetails.minutes, TwoMileDetails.seconds));
-        stringBuilder.append(String.format("The converted 5K time is: %d:%d", FiveKDetails.minutes, FiveKDetails.seconds));
-        stringBuilder.append(String.format("The converted 10K time is: %d:%d", TenKDetails.minutes, TenKDetails.seconds));
+        stringBuilder.append(String.format("\nThe converted mile time is: %d:%d\n", mileDetails.minutes, mileDetails.seconds));
+        stringBuilder.append(String.format("The converted 2 mile time is: %d:%d\n", twoMileDetails.minutes, twoMileDetails.seconds));
+        stringBuilder.append(String.format("The converted 5K time is: %d:%d\n", fiveKDetails.minutes, fiveKDetails.seconds));
+        stringBuilder.append(String.format("The converted 10K time is: %d:%d\n", tenKDetails.minutes, tenKDetails.seconds));
         return stringBuilder.toString();
     }
 

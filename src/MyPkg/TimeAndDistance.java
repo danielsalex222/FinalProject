@@ -1,5 +1,7 @@
 package MyPkg;
 
+import java.util.Scanner;
+
 public class TimeAndDistance {
     private int distance;
     private int minutes;

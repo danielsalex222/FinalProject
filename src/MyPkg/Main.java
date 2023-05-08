@@ -1,38 +1,45 @@
 package MyPkg;
-import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     public static void main (String[] args){
         Scanner input = new Scanner(System.in);
         boolean running = true;
         System.out.println("Welcome to the Run-O-Matic 5000");
-        InputRequester inputRequester = new InputRequester();
+        InputRequester inputRequester = new InputRequester(input);
 
         do {
-            System.out.println("Please Enter the function you would like to use");
-            System.out.print("1- Race Time Predictor\t\t2- Split Finder\n3- Pace Calculator\t\t\t4- Elevation Guru\n5- Speed Converter\t\t\t6- Function Info\n7- Exit\n");
-            System.out.print("||~ ");
-            int userFunction = input.nextInt();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("Please Enter the function you would like to use\n");
+            stringBuilder.append("1- Race Time Predictor\t\t2- Split Finder\n");
+            stringBuilder.append("3- Pace Calculator\t\t\t4- Elevation Guru\n");
+            stringBuilder.append("5- Speed Converter\t\t\t6- Function Info\n");
+            stringBuilder.append("7- Exit\n");
+            stringBuilder.append("||~ ");
 
-            switch (userFunction) {
+            switch (inputRequester.getIntegerInput(7, stringBuilder.toString())) {
                 case 1 -> {
-                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput(input);
+                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput();
                     RacePredictor rp = new RacePredictor(timeAndDistance);
                     System.out.println(rp.calculate());
                 }
                 case 2 -> {
-                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput(input);
-                    System.out.println(new SplitFinder(timeAndDistance));
+                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput();
+                    SplitFinder sf = new SplitFinder(timeAndDistance);
+                    System.out.println(sf.calculate());
                 }
                 case 3 -> {
-                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput(input);
-                    System.out.println(new RacingPaceCalculator(timeAndDistance));
+                    TimeAndDistance timeAndDistance = inputRequester.timeDistanceInput();
+                    RacingPaceCalculator rpc = new RacingPaceCalculator(timeAndDistance);
+                    System.out.println(rpc.calculate());
                 }
-                case 4 -> System.out.println(new ElevationGuru());
+                case 4 -> {
+                    ElevationGuru eg = new ElevationGuru();
+                    System.out.println(eg.calculate());
+                }
                 case 5 -> new SpeedConverter();
                 case 6 -> System.out.print(FunctionInfo());
                 case 7 -> running = false;
-                default -> System.out.print("Unknown Input");
+                default -> System.out.println("INPUT MUST BE AN INTEGER VALUE 1-7\n");
             }
 
         } while (running);
