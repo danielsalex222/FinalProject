@@ -1,5 +1,6 @@
 /*
-
+    Child class of the TimeDistanceCalculator
+    Finds 400 or mile splits for the chosen race
  */
 package runningProgram;
 
