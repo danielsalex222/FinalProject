@@ -1,4 +1,4 @@
-package MyPkg;
+package runningProgram;
 
 public class SplitFinder extends TimeDistanceCalculator{
 

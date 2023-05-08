@@ -1,11 +1,19 @@
-package MyPkg;
+package runningProgram;
 
 public class RacePredictor extends TimeDistanceCalculator{
 
+    /**
+     * Constructor method
+     * @param timeAndDistance
+     */
     public RacePredictor(TimeAndDistance timeAndDistance) {
         super(timeAndDistance);
     }
 
+    /**
+     * Calculate method
+     * @return String of the output for this function
+     */
     public String calculate() {
         double seconds = timeAndDistance.getTotalSeconds();
         double distance = timeAndDistance.getDistance();

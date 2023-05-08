@@ -1,4 +1,4 @@
-package MyPkg;
+package runningProgram;
 import java.util.Scanner;
 public class Main {
 
@@ -48,8 +48,11 @@ public class Main {
 
     }
 
-    // FIX THIS!!!
 
+    /**
+     * Explains information about the funcions
+     * @return string
+     */
     private static String FunctionInfo() {
         StringBuilder x = new StringBuilder();
         //Race Predictor info
