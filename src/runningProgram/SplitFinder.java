@@ -36,10 +36,9 @@ public class SplitFinder extends TimeDistanceCalculator{
             for (int i = 1; i < distance / 1600; i++) {
                 MinutesAndSeconds splits = miles(totalSeconds, i);
                 stringBuilder.append(String.format("%d mile split - %d:%02d\n", i, splits.getMinutes(), splits.getSeconds()));
-                double extra = seconds - (splits.getMinutes() + splits.getSeconds());
             }
 
-            stringBuilder.append(String.format("Extra - %d:%02d", 1, 1));
+            stringBuilder.append(String.format("Extra - %d:%02d", TimeAndDistance.getMinutes(), TimeAndDistance.getSeconds()));
 
         }
 
