@@ -6,6 +6,8 @@ package runningProgram;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static runningProgram.DistanceValues.*;
+
 public class InputRequester {
 
     private Scanner input;
@@ -65,16 +67,16 @@ public class InputRequester {
         String distanceAsk = "Please enter a distance (1 = 1 mile, 2 = 2 mile, 3 = 5K, 4 = 10K): ";
         switch (getIntegerInput(4, distanceAsk)){
             case 1 -> {
-                return 1609; // 1 Mile in meters
+                return MILE_IN_METERS; // 1 Mile in meters (1609)
             }
             case 2 -> {
-                return 3218; // 2 miles in meters
+                return TWO_MILES_IN_METERS; // 2 miles in meters (3218)
             }
             case 3 -> {
-                return 5000; // 5K (5000 meters)
+                return FIVE_THOUSAND_METERS; // 5K (5000 meters)
             }
             case 4 -> {
-                return 10000; // 10K (10000 meters)
+                return TEN_THOUSAND_METERS; // 10K (10000 meters)
             }
             default -> {
                 System.out.println("That is not one of the options. Try again");

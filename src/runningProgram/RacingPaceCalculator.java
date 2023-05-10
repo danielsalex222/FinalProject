@@ -4,6 +4,8 @@
  */
 package runningProgram;
 
+import static runningProgram.DistanceValues.MILE_IN_METERS;
+
 public class RacingPaceCalculator extends TimeDistanceCalculator{
 
     RacingPaceCalculator(TimeAndDistance timeAndDistance) {
@@ -17,7 +19,7 @@ public class RacingPaceCalculator extends TimeDistanceCalculator{
 
         double secondsPerMeter = (seconds / distance);
 
-        double secondsPerMile = secondsPerMeter * 1609;
+        double secondsPerMile = secondsPerMeter * MILE_IN_METERS;
 
         MinutesAndSeconds details = convertToMinutesAndSeconds(secondsPerMile);
 

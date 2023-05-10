@@ -4,6 +4,8 @@
  */
 package runningProgram;
 
+import static runningProgram.DistanceValues.*;
+
 public class RacePredictor extends TimeDistanceCalculator{
 
     /**
@@ -26,10 +28,10 @@ public class RacePredictor extends TimeDistanceCalculator{
             Algorithm for the new time is (t2 = t1 * (d2 / d1)^1.06)
             The 1.06 is an exponent developed by experts that found that that was the best conversion number.
          */
-        double predictedSecondsPerMile = seconds * (Math.pow((1609 / distance), 1.06));
-        double predictedSecondsPerTwoMile = seconds * (Math.pow((3218 / distance), 1.06));
-        double predictedSecondsPerFiveK = seconds * (Math.pow((5000 / distance), 1.06));
-        double predictedSecondsPerTenK = seconds * (Math.pow((10000 / distance), 1.06));
+        double predictedSecondsPerMile = seconds * (Math.pow((MILE_IN_METERS / distance), 1.06));
+        double predictedSecondsPerTwoMile = seconds * (Math.pow((TWO_MILES_IN_METERS / distance), 1.06));
+        double predictedSecondsPerFiveK = seconds * (Math.pow((FIVE_THOUSAND_METERS / distance), 1.06));
+        double predictedSecondsPerTenK = seconds * (Math.pow((TEN_THOUSAND_METERS / distance), 1.06));
 
         MinutesAndSeconds mileDetails = convertToMinutesAndSeconds(predictedSecondsPerMile);
         MinutesAndSeconds twoMileDetails = convertToMinutesAndSeconds(predictedSecondsPerTwoMile);

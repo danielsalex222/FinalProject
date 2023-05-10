@@ -4,7 +4,11 @@
  */
 package runningProgram;
 
+import static runningProgram.DistanceValues.*;
+
 public class SplitFinder extends TimeDistanceCalculator{
+
+
     /**
      * No-Args constructor
      * @param timeAndDistance
@@ -25,20 +29,21 @@ public class SplitFinder extends TimeDistanceCalculator{
         StringBuilder stringBuilder = new StringBuilder();
 
 
-        if (distance < 3219) {
-            double fourHundredSplit = ((seconds / distance) * 1609) / 4;
-            for (int i = 1; i < distance / 400; i++) {
+        if (distance < TWO_MILES_IN_METERS) {
+            double fourHundredSplit = ((seconds / distance) * MILE_IN_METERS) / 4;
+            for (int i = 1; i < distance / FOUR_HUNDRED_METERS; i++) {
                 MinutesAndSeconds splits = fourHundreds(fourHundredSplit, i);
-                stringBuilder.append(String.format("%d meter split - %d:%02d\n", i*400, splits.getMinutes(), splits.getSeconds()));
+                stringBuilder.append(String.format("%d meter split - %d:%02d\n", i * FOUR_HUNDRED_METERS, splits.getMinutes(), splits.getSeconds()));
             }
-        } else if (distance > 3218) {
-            double totalSeconds = (seconds / distance) * 1609;
-            for (int i = 1; i < distance / 1600; i++) {
+        } else if (distance > TWO_MILES_IN_METERS) {
+            double totalSeconds = (seconds / distance) * MILE_IN_METERS;
+            for (int i = 1; i < distance / MILE_IN_METERS; i++) {
                 MinutesAndSeconds splits = miles(totalSeconds, i);
                 stringBuilder.append(String.format("%d mile split - %d:%02d\n", i, splits.getMinutes(), splits.getSeconds()));
             }
 
-            stringBuilder.append(String.format("Extra - %d:%02d", TimeAndDistance.getMinutes(), TimeAndDistance.getSeconds()));
+            MinutesAndSeconds totalTime = convertToMinutesAndSeconds(seconds);
+            stringBuilder.append(String.format("Extra - %d:%02d", totalTime.getMinutes(), totalTime.getSeconds()));
 
         }
 
