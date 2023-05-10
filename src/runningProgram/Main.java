@@ -21,7 +21,7 @@ public class Main {
             stringBuilder.append("1- Race Time Predictor\t\t2- Split Finder\n");
             stringBuilder.append("3- Pace Calculator\t\t\t4- Elevation Guru\n");
             stringBuilder.append("5- Speed Converter\t\t\t6- Function Info\n");
-            stringBuilder.append("7- Text File Maker\t\t\t8- Exit\n");
+            stringBuilder.append("7- Power Phrase Generator\t8- Exit\n");
             stringBuilder.append("||~ ");
 
             switch (inputRequester.getIntegerInput(8, stringBuilder.toString())) {
@@ -70,7 +70,7 @@ public class Main {
     private static String FunctionInfo() {
         StringBuilder x = new StringBuilder();
         //Race Predictor info
-        x.append("RACE PREDICTOR - The user will input a time for a certain distance\nand the program will predict their race times at other\ndistances for that level of fitness.\n\n");
+        x.append("\nRACE PREDICTOR - The user will input a time for a certain distance\nand the program will predict their race times at other\ndistances for that level of fitness.\n\n");
         //Split Finder Info
         x.append("SPLIT FINDER - The user will input a distance and time\nand will show the user the splits per mile\nthat they will need to achieve the desired time.\n\n");
         //Racing Pace Calculator Info
@@ -79,6 +79,7 @@ public class Main {
         x.append("ELEVATION GURU - This takes an inputted vertical and \nhorizontal distance and will calculate the hill's grade\n\n");
         //Speed converter info
         x.append("SPEED CONVERTER - This will switch miles per hour\ninto kilometers per hour and vice versa\n\n");
+        x.append("POWER PHRASE GENERATOR - This will generate a power phrase by random and print it as well as write it to a file\n\n");
         return (x.toString());
     }
 
