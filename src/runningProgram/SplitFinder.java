@@ -26,16 +26,18 @@ public class SplitFinder extends TimeDistanceCalculator{
         double seconds = timeAndDistance.getTotalSeconds();
         double distance = timeAndDistance.getDistance();
 
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder("\n");
 
 
-        if (distance < TWO_MILES_IN_METERS) {
+        // If the distance is less or equal to two miles then it will show 400m splits
+        if (distance <= TWO_MILES_IN_METERS) {
             double fourHundredSplit = ((seconds / distance) * MILE_IN_METERS) / 4;
             for (int i = 1; i < distance / FOUR_HUNDRED_METERS; i++) {
                 MinutesAndSeconds splits = fourHundreds(fourHundredSplit, i);
                 stringBuilder.append(String.format("%d meter split - %d:%02d\n", i * FOUR_HUNDRED_METERS, splits.getMinutes(), splits.getSeconds()));
             }
-        } else if (distance > TWO_MILES_IN_METERS) {
+        } else {
+            // If the distance is greater than two miles then it will show mile splits
             double totalSeconds = (seconds / distance) * MILE_IN_METERS;
             for (int i = 1; i < distance / MILE_IN_METERS; i++) {
                 MinutesAndSeconds splits = miles(totalSeconds, i);

@@ -2,29 +2,16 @@ package runningProgram;
 import java.io.*;
 
 public class FileIO {
-     public String verify() throws IOException {
+    public String verify() {
+        try (FileWriter writer = new FileWriter("awesomeFileByGrantAlexAndDavid.txt")) {
+            writer.write("Hello World\n");
+            writer.write("This is an example of writing to a file using Java.");
 
-         FileReader in = null;
-         FileWriter out = null;
-
-         try {
-             in = new FileReader("input.txt");
-             out = new FileWriter("output.txt");
-
-             int c;
-             while ((c = in.read()) != -1) {
-                 out.write(c);
-             }
-         } catch (IOException e) {
-             throw new RuntimeException(e);
-         } finally {
-             if (in != null) {
-                 in.close();
-             }
-             if (out != null) {
-                 out.close();
-             }
-         }
-         return "Check your files";
-     }
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        return "Done";
     }
+}

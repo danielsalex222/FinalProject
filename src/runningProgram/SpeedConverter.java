@@ -21,7 +21,7 @@ public class SpeedConverter extends Calculator{
     @Override
     public String calculate() {
 
-        return String.format("%dMPH is equal to %dKm/H", mph, kph);
+        return String.format("\n%dMPH is equal to %dKm/H\n", mph, kph);
     }
 
     /**

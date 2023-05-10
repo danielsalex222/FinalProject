@@ -5,10 +5,10 @@
  */
 
 package runningProgram;
-import java.io.IOException;
+
 import java.util.Scanner;
 public class Main {
-    public static void main (String[] args) throws IOException {
+    public static void main (String[] args) {
 
         Scanner input = new Scanner(System.in);
         boolean running = true;
@@ -41,8 +41,7 @@ public class Main {
                     System.out.println(rpc.calculate());
                 }
                 case 4 -> {//Elevation
-                    ElevationGuru eg = new ElevationGuru();
-                    eg = inputRequester.getElevation();
+                    ElevationGuru eg = inputRequester.getElevation();
                     System.out.println(eg.calculate());
                 }
                 case 5 -> {//Speed Converter
